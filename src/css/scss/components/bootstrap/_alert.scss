@@ -1,0 +1,53 @@
+.alert {
+    $this: &;
+    padding: 1rem 0;
+    margin-bottom: 0;
+
+    @include media-breakpoint-down(sm) {
+        padding: 1rem 0;
+        font-size: $font-size-sm;
+    }
+
+    &-success {
+        color: $black;
+        background-color: $success;
+    }
+
+    &-danger {
+        color: $white;
+        background-color: $danger;
+    }
+
+    &-warning {
+        color: $black;
+        background-color: $warning;
+    }
+
+    &-info {
+        color: $white;
+        background-color: $info;
+    }
+
+    h2,
+    h3 {
+        color: inherit;
+        @include font-size($h4-font-size);
+    }
+
+    p {
+        font-weight: 700;
+        margin-bottom: 0;
+    }
+
+    a {
+        color: inherit !important;
+        font-weight: 700 !important;
+    }
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+}

@@ -1,0 +1,27 @@
+.table-striped {
+    > tbody {
+        > tr {
+            &:nth-of-type(2n + 1) > * {
+                --bs-table-bg-type: var(--bs-table-bg);
+            }
+
+            &:nth-of-type(2n) > * {
+                --bs-table-bg-type: var(--bs-table-striped-bg);
+            }
+        }
+    }
+}
+
+table {
+    a[href*="mailto:"] {
+        word-break: break-word;
+    }
+}
+
+#content table {
+    @extend .table;
+    
+    thead {
+        @extend .table-light;
+    }
+}

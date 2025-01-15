@@ -1,0 +1,94 @@
+.ntg-footer-banner {
+    $this: &;
+    padding: 3rem 0;
+    background-color: tint-color($light, 60%);
+    position: relative;
+    overflow: clip;
+
+    @include media-breakpoint-down(lg) {
+        padding: 2rem 0;
+    }
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 3rem;
+
+        @include media-breakpoint-down(lg) {
+            flex-direction: column;
+            gap: 2rem;
+        }
+    }
+
+    &__main {
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+        position: relative;
+    
+        @include media-breakpoint-down(lg) {
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        @include media-breakpoint-up(lg) {
+            width: 60%;
+            padding-right: 1rem;
+        }
+
+        &::before {
+            content: '';
+            background-color: $light;
+            position: absolute;
+            top: -9999px;
+            bottom: -9999px;
+            left: -9999px;
+            right: 0;
+
+            @include media-breakpoint-down(lg) {
+                right: -9999px;
+            }
+        }
+
+        &::after {
+            content: '';
+            background-image: url('../assets/css-images/gray.svg');
+            background-size: 100% 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: absolute;
+            width: 323px;
+            top: -200px;
+            bottom: -100px;
+            left: calc(100% - 5px);
+            
+            @include media-breakpoint-down(lg) {
+                content: none;
+            }
+        }
+
+        > * {
+            position: relative;
+        }
+    }
+
+    &__text {
+        @include media-breakpoint-down(lg) {
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: $paragraph-margin-bottom;
+        }
+
+        > *:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .btn {
+        white-space: nowrap;
+        position: relative;
+    }
+}

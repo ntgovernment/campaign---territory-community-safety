@@ -1,0 +1,19 @@
+.ntg-featured-news {
+    .container > .row {
+        @include media-breakpoint-down(lg) {
+            display: none;
+        }
+    }
+
+    .flickity-carousel {
+        margin-top: 1.5rem;
+
+        @include media-breakpoint-up(lg) {
+            display: none;
+        }
+    }
+
+    .card {
+        border-color: $border-color;
+    }
+}

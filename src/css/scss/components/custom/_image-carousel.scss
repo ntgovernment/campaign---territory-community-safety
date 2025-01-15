@@ -1,0 +1,45 @@
+.ntg-image-carousel {
+    .flickity-carousel {
+        @include media-breakpoint-down(sm) {
+            padding-bottom: 0;
+
+            &::after {
+                content: '';
+                background: linear-gradient(to right, transparent 0%, $white 10%);
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                width: 60px;
+                height: 22px;
+            }
+        }
+    }
+
+    .carousel-cell {
+        width: 100%;
+    }
+
+    .flickity-page-dots {
+        text-align: left;
+    }
+
+    .flickity-button {
+        top: calc(100% - 12px);
+        z-index: 1;
+
+        &.previous {
+            left: unset;
+            right: 30px;
+        }
+
+        &.next {
+            left: unset;
+            right: 0;
+        }
+    }
+
+    &__caption {
+        margin-top: $paragraph-margin-bottom;
+        margin-bottom: 0;
+    }
+}

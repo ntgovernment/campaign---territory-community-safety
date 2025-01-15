@@ -1,0 +1,51 @@
+@use "sass:map";
+
+.ntg-cta {
+    &__wrapper {
+        position: relative;
+    }
+
+    &__content {
+        background-color: $primary;
+        padding: 1.5rem;
+
+        @include media-breakpoint-up(lg) {
+            padding: 2rem 3rem;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1;
+            width: 45%;
+        }
+
+        h2 {
+            margin-bottom: $paragraph-margin-bottom;
+        }
+    }
+    
+    .ratio {
+        margin-left: auto;
+
+        &::before {
+            @include media-breakpoint-up(lg) {
+                padding-top: 425px;
+            }
+        }
+
+        @include media-breakpoint-up(lg) {
+            width: 90%;
+        }
+
+        @include media-breakpoint-up(xl) {
+            width: 80%;
+        }
+
+        @include media-breakpoint-up(xxl) {
+            width: 70%;
+        }
+    }
+
+    img {
+        object-fit: cover;
+    }
+}

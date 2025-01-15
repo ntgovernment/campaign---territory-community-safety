@@ -1,0 +1,59 @@
+.ntg-callout:has(.container) {
+    .callout {
+        @include media-breakpoint-up(lg) {
+            width: 50%;
+        }
+    }
+}
+
+.callout {
+    position: relative;
+    padding: 1rem 1.5rem;
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+
+    h2, h3 {
+        margin-bottom: $paragraph-margin-bottom;
+    }
+
+    > * {
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 5px;
+        height: 100%;
+        background-color: transparent;
+    }
+
+    &-info {
+        &:before {
+            background-color: $info;
+        }
+    }
+
+    &-warning {
+        &:before {
+            background-color: $warning;
+        }
+    }
+
+    &-danger {
+        &:before {
+            background-color: $danger;
+        }
+    }
+
+    &-success {
+        &:before {
+            background-color: $success;
+        }
+    }
+}

@@ -1,0 +1,15 @@
+.ntg-side-misc {
+    &:not(.ntg-side-misc--footer) {
+        @include media-breakpoint-down(lg) {
+            display: none;
+        }
+    }
+
+    &--footer {
+        padding: 2rem 0;
+
+        @include media-breakpoint-up(lg) {
+            display: none;
+        }
+    }
+}

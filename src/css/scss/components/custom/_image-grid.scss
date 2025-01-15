@@ -1,0 +1,36 @@
+.ntg-image-grid {
+	a {
+		overflow: hidden;
+
+		img {
+			transition: 0.2s transform ease, 0.2s filter ease;
+			object-fit: cover;
+		}
+
+		&::after {
+			@extend .fa;
+			content: '\f31d';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			color: $white;
+			font-size: 5rem;
+			font-weight: 300 !important;
+			opacity: 0;
+			transition: 0.2s opacity ease;
+		}
+
+		&:hover,
+		&:focus-visible {
+			img {
+				transform: scale(1.1);
+				filter: brightness(80%);
+			}
+
+			&::after {
+				opacity: 1;
+			}
+		}
+	}
+}

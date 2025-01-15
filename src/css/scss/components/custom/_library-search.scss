@@ -1,0 +1,28 @@
+#content .ntg-library-search form {
+    .col-auto {
+        @include media-breakpoint-up(lg) {
+            flex: 0 0 auto;
+        }
+    }
+
+    .sq-form-question,
+    .sq-form-control {
+        margin-top: 1rem;
+    }
+}
+
+.ntg-library-search {
+    padding: 3rem 0;
+
+    @include media-breakpoint-down(sm) {
+        padding: 2rem 0;
+    }
+
+    p {
+        margin: 1.5rem 0 0 0;
+    }
+
+    a {
+        font-weight: 700;
+    }
+}

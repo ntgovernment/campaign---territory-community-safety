@@ -1,0 +1,44 @@
+.pagination {
+    font-weight: 700;
+    margin-bottom: 0;
+
+    a {
+        &:hover {
+            color: $primary;
+            text-decoration: underline;
+        }
+
+        &:focus {
+            @include focus();
+        }
+    }
+
+    .page-item {
+        .page-link {
+            &[aria-label="Previous"],
+            &[aria-label="Next"] {
+                white-space: nowrap;
+
+                span {
+                    @include media-breakpoint-down(sm) {
+                        display: none;
+                    }
+                }
+            }
+
+            &[aria-label="Previous"] {
+                margin-left: calc($pagination-padding-x * -1);
+
+                &::before {
+                    content: '\2039\2039  ';
+                }
+            }
+
+            &[aria-label="Next"] {
+                &::after {
+                    content: ' \203a\203a';
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,77 @@
+.ntg-library-listing {
+    &__banner {
+        background-color: $primary;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__introduction {
+        h2 {
+            margin-bottom: 0.5rem;
+        }
+
+        > *:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    nav {
+        @include media-breakpoint-up(md) {
+            column-count: 2;
+            column-gap: 10%;
+        }
+
+        ul {
+            @extend .list-unstyled;
+            break-inside: avoid-column;
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-top: 1px solid $border-color;
+            box-shadow: 0 1px $border-color;
+            position: relative;
+
+            &:focus-within {
+                @include focus();
+            }
+        }
+
+        a {
+            @extend .stretched-link;
+            text-decoration: none;
+            padding: 1rem 0;
+            font-weight: 700;
+            transition: 0.15s color ease-in-out;
+
+            &:hover,
+            &:focus {
+                color: $primary;
+            }
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        i {
+            color: $icon-color;
+        }
+
+        h3 {
+            margin: 1rem 0;
+            font-weight: 500;
+        }
+
+        ul:first-child {
+            h3 {
+                margin-top: 0;
+            }
+        }
+    }
+}

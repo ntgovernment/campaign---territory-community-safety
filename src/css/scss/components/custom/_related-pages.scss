@@ -1,0 +1,7 @@
+.ntg-related-pages {
+    padding: 3rem 0;
+    
+    @include media-breakpoint-down(sm) {
+        padding: 2rem 0;
+    }
+}

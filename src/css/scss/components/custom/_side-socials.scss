@@ -1,0 +1,28 @@
+.ntg-side-socials {
+    h2 {
+        margin-bottom: $paragraph-margin-bottom;
+    }
+
+    ul {
+        @extend .list-unstyled;
+        margin-bottom: 0;
+    }
+
+    li {
+        &:not(:last-child) {
+            margin-bottom: 0.5rem;
+        }
+    }
+
+    a {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    i {
+        color: $icon-color;
+        width: 16px;
+        text-align: center;
+    }
+}

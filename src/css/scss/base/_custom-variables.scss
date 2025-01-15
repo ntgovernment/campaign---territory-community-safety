@@ -1,0 +1,153 @@
+$prefix: bs-;
+
+/* -------- Bootstrap -------- */
+
+// Key Global bootstrap options
+$spacer: 1rem;
+
+$spacers: (
+    0: 0,
+    1: $spacer * 0.25,
+    2: $spacer * 0.5,
+    3: $spacer * 1,
+    4: $spacer * 1.5,
+    5: $spacer * 2,
+    6: $spacer * 2.5,
+    7: $spacer * 3,
+    8: $spacer * 5,
+    9: $spacer * 7.5,
+    10: $spacer * 10
+);
+
+$enable-dark-mode: true;
+$enable-rounded: true;
+$enable-shadows: false;
+$enable-gradients: false;
+$enable-transitions: true;
+$enable-reduced-motion: true;
+$enable-grid-classes: true;
+$enable-container-classes: true;
+$enable-caret: true;
+$enable-button-pointers: true;
+$enable-rfs: true;
+$enable-validation-icons: true;
+$enable-negative-margins: false;
+$enable-deprecation-messages: true;
+$enable-important-utilities: true;
+$enable-smooth-scroll: true;
+
+$aspect-ratios: (
+  "1x1": 100%,
+  "4x3": calc(3 / 4 * 100%),
+  "16x9": calc(9 / 16 * 100%),
+  "21x9": calc(9 / 21 * 100%),
+  "32x9": calc(9 / 32 * 100%)
+);
+
+// Accordion
+$accordion-padding-y: 2rem;
+$accordion-padding-x: 2rem;
+$accordion-bg: $white;
+$accordion-color: $body-color;
+$accordion-border-width: 1px;
+$accordion-border-color: $border-color-dark;
+$accordion-border-radius: 0;
+$accordion-button-bg: $white;
+$accordion-button-color: $body-color;
+$accordion-button-active-bg: $light;
+$accordion-button-active-color: $body-color;
+$accordion-button-focus-border-color: transparent;
+$accordion-button-focus-box-shadow: none;
+$accordion-icon-width: 17px;
+$accordion-icon-color: $body-color;
+$accordion-icon-active-color: $body-color;
+$accordion-button-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='448' height='512' viewBox='0 0 448 512'><path d='M256 80V48H192V80 224H48 16v64H48 192V432v32h64V432 288H400h32V224H400 256V80z' fill='#{$accordion-icon-active-color}' /></svg>");
+$accordion-button-active-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='448' height='512' viewBox='0 0 448 512'><path d='M432 288H400L48 288H16l0-64 32 0 352 0 32 0v64z' fill='#{$accordion-icon-active-color}' /></svg>");
+$accordion-icon-transform: rotate(180deg);
+
+// Alerts
+$alert-border-width: 0;
+$alert-border-radius: 0;
+
+// Breadcrumbs
+$breadcrumb-divider: quote('/');
+$breadcrumb-active-color: $body-color;
+
+// Buttons
+$btn-font-weight: 700;
+$btn-padding-y: 1rem;
+$btn-padding-x: 2.5rem;
+$btn-border-width: 1px;
+$btn-border-radius: 200px;
+$btn-transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out, padding .15s ease-in-out;
+
+$btn-padding-y-sm: 0.75rem;
+$btn-padding-x-sm: 1.5rem;
+$btn-border-radius-sm: 200px;
+
+$btn-padding-y-lg: 1.25rem;
+$btn-padding-x-lg: 3rem;
+$btn-border-radius-lg: 200px;
+
+// Cards
+$card-height: 100%;
+$card-border-color: $border-color-dark;
+$card-title-spacer-y: $spacer;
+$card-spacer-y: 1.5rem;
+$card-spacer-x: 1.5rem;
+$card-cap-padding-y: $card-spacer-y;
+
+// Carousel
+$carousel-indicator-height: 6px;
+$carousel-indicator-opacity: 1;
+$carousel-indicator-transition: 0.2s background-color ease-in-out;
+
+// Close
+$btn-close-color: $black;
+$btn-close-opacity: 1;
+$btn-close-white-filter: none;
+
+// Form
+$input-padding-y: 0.75rem;
+$input-padding-x: 1.25rem;
+$input-border-color: $dark;
+$input-border-radius: 0;
+$input-focus-border-color: $dark;
+$form-check-input-width: 1.263em;
+$form-check-input-border: 1px solid $dark;
+$form-check-input-focus-border: 1px solid $dark;
+$form-check-input-focus-box-shadow: none;
+$form-check-input-checked-bg-color: $primary;
+
+// Pagination
+$pagination-color: $body-color;
+$pagination-bg: transparent;
+$pagination-border-radius: 0;
+$pagination-border-width: 2px;
+$pagination-border-color: transparent;
+$pagination-focus-bg: $pagination-bg;
+$pagination-hover-bg: $pagination-bg;
+$pagination-hover-border-color: $pagination-border-color;
+$pagination-active-color: $pagination-color;
+$pagination-active-bg: $pagination-bg;
+$pagination-active-border-color: $pagination-color;
+
+// Table
+$table-cell-padding-y: 1rem;
+$table-cell-padding-x: 1.5rem;
+$table-border-color: $border-color;
+
+/* -------- Custom -------- */
+  
+// These variables are required.
+$focus-ring-width:      .25rem;
+$focus-ring-opacity:    .25;
+$focus-ring-color:      rgba($ntg-heliconia-orange, $focus-ring-opacity);
+$focus-ring-blur:       0;
+$focus-ring-box-shadow: 0 0 $focus-ring-blur $focus-ring-width $focus-ring-color;
+
+$focus-color: $ntg-heliconia-orange;
+$focus-width: 3px;
+$outline-offset-width: 2px;
+
+$text-shadow: 2px 2px 2px rgba($ntg-dark-gray, 0.75);

@@ -1,0 +1,172 @@
+// Global link styles
+a {
+    color: inherit;
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+    }
+
+    &:focus {
+        @include focus();
+    }
+}
+
+// <p> tags in bootstrap have a default bottom margin
+#content {
+    p + ul {
+        margin-top: -0.5rem;
+    }
+
+    > *:last-child {
+        margin-bottom: 0;
+    }
+}
+
+// Removes the outline from links if its clicked with a mouse
+*:focus:not(:focus-visible) {
+    outline: none !important;
+}
+
+// Keeps the footer at the bottom of the visible screen when there
+// is not enough content available
+#wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    .page-header-container,
+    .ntg-footer {
+        flex: none;
+    }
+
+    main {
+        flex: 1 0 auto;
+    }
+}
+
+// clears the 'x' from ie
+input[type=search]::-ms-clear,
+input[type=search]::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0; 
+}
+
+// clears the 'x' from webkit browsers
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none; 
+}
+
+h1 {
+    font-weight: 700;
+}
+
+#content {
+    overflow-x: clip;
+}
+
+// two col page layout
+.page-layout {
+    &__left {
+        height: 100%;
+        position: relative;
+
+        &::before {
+            content: '';
+            background: $primary;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: -9999px;
+            right: 0;
+
+            @include media-breakpoint-down(lg) {
+                right: -9999px;
+            }
+        }
+
+        .btn-back {
+            text-decoration: none;
+            
+            &:hover {
+                text-decoration: underline;
+            }
+
+            i {
+                margin-right: 1rem;
+            }
+        }
+
+        nav[aria-label="breadcrumb"] {
+            padding: 0 0 1rem;
+
+            .container {
+                padding: 0;
+            }
+        }
+
+        h1 {
+            @include font-size($h2-font-size);
+        }
+    }
+
+    &__right {
+        h2 {
+            @include font-size($h3-font-size);
+
+            @include media-breakpoint-down(lg) {
+                margin-bottom: 1.5rem;
+            }
+        }
+    }
+    
+    &__content {
+        position: relative;
+        padding: 3rem 0;
+    }
+}
+
+// section heading style
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+
+    h2 {
+        margin-bottom: 0;
+
+        @include media-breakpoint-down(lg) {
+            @include font-size($h3-font-size);
+        }
+    }
+}
+
+// link border style
+.link-border {
+    font-weight: 700;
+    text-decoration: none;
+    padding-bottom: 0.5rem;
+    margin-bottom: -0.75rem;
+    border-bottom: 2px solid $primary;
+    transition: 0.15s color ease-in-out;
+
+    @include media-breakpoint-down(lg) {
+        padding-bottom: 0.25rem;
+        margin-bottom: -0.5rem;
+    }
+
+    &:hover,
+    &:focus {
+        color: $primary;
+    }
+
+    i {
+        margin-left: 0.5rem;
+    }
+}

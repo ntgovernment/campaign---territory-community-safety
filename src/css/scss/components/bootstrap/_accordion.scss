@@ -1,0 +1,69 @@
+.accordion {
+    &-item {
+        transition: 0.15s background-color ease-in-out;
+
+        &:not(:first-of-type) {
+            margin-top: 1rem;
+            border-top: $accordion-border-width solid $accordion-border-color;
+        }
+
+        &:has(.accordion-button:not(.collapsed)) {
+            background-color: $light;
+        }
+    }
+
+    &-header {
+        @include font-size($h4-font-size);
+
+        @include media-breakpoint-down(lg) {
+            font-size: $font-size-base;
+        }
+
+        &:target {
+            display: block;
+        }
+    }
+
+    &-button {
+        font-size: inherit;
+        font-weight: inherit;
+        gap: 1rem;
+
+        @include media-breakpoint-down(lg) {
+            padding: 1.5rem;
+        }
+
+        &:focus {
+            @include focus();
+        }
+
+        &:after {
+            background-position: center;
+
+            @include media-breakpoint-down(lg) {
+                width: 0.875rem;
+                height: 0.875rem;
+                background-size: 0.875rem;
+            }
+        }
+
+        &:not(.collapsed) {
+            box-shadow: none;
+        }
+    }
+
+    &-body {
+        padding-top: 0;
+
+        @include media-breakpoint-down(lg) {
+            padding: 0 1.5rem 1.5rem 1.5rem;
+        }
+
+
+        > * {
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

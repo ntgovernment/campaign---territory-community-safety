@@ -1,0 +1,157 @@
+.page-header-container {
+    background-color: $white;
+    border-bottom: 1px solid #ADADAD;
+}
+
+.sticky-header {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    transition: 0.25s transform ease-in-out,
+            0.2s box-shadow ease-in-out;
+
+    &.header-hide {
+        transform: translateY(-100%);
+    }
+
+    &.header-scroll {
+        box-shadow: 0 2px 8px rgba($black, 0.2);
+    }
+}
+
+.ntg-header {
+    &__bottom {
+        padding: 0.5rem 0;
+        
+        @include media-breakpoint-up(sm) {
+            padding: 1rem 0;
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.5rem;
+
+        @include media-breakpoint-down(lg) {
+            gap: 0.25rem;
+        }
+
+        &:has(.priority-nav) {
+            width: 100%;
+            justify-content: flex-end;
+        }
+    }
+
+    &__logo {
+        min-width: 60px;
+        max-width: 100px;
+        width: 100%;
+
+        @include media-breakpoint-down(sm) {
+            max-width: 80px;
+        }
+    }
+
+    &__image {
+        width: 100%;
+        height: auto;
+    }
+
+    &__top {
+        padding: 0.5rem 0;
+        background-color: $secondary;
+        color: $secondary-text;
+        font-size: $font-size-sm;
+
+        @include media-breakpoint-down(sm) {
+            text-align: center;
+        }
+
+        p,
+        ul {
+            margin-bottom: 0;
+        }
+    }
+
+    &__nav {
+        @include media-breakpoint-down(lg) {
+            display: none;
+        }
+    }
+
+    &__links {
+        @extend .list-unstyled;
+        display: flex;
+        gap: 2rem;
+
+        a {
+            font-weight: 300;
+            text-decoration: none;
+    
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &__right {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+
+        @include media-breakpoint-down(xl) {
+            gap: 0.5rem;
+        }
+
+        @include media-breakpoint-down(lg) {
+            order: 1;
+        }
+    }
+
+    &__button {
+        @extend .btn;
+        @extend .btn-outline-secondary;
+        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+        @include media-breakpoint-down(xl) {
+            font-size: $font-size-sm;
+            padding: $btn-padding-y-sm $btn-padding-x-sm;
+        }
+
+        @include media-breakpoint-down(lg) {
+            display: none;
+        }
+    }
+
+    &__search {
+        height: 46px;
+        width: 46px;
+        appearance: none;
+        background: none;
+        border: none;
+
+        i {
+            color: $black;
+            font-size: 1.875rem;
+            transition: 0.2s color ease-in;
+
+            @include media-breakpoint-down(xl) {
+                font-size: 1.375rem;
+            }
+        }
+
+        &:hover {
+            cursor: pointer;
+
+            i {
+                color: $primary;
+            }
+        }
+
+        &:focus {
+            @include focus();
+        }
+    }
+}

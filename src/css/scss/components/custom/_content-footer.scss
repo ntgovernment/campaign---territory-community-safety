@@ -1,0 +1,12 @@
+.ntg-content-footer {
+    padding: 2rem 0;
+    font-size: $font-size-sm;
+
+    @include media-breakpoint-down(sm) {
+        padding: 1rem 0;
+    }
+
+    hr {
+        margin-top: 0;
+    }
+}

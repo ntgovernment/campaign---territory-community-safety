@@ -1,0 +1,13 @@
+nav[aria-label="breadcrumb"] {
+    padding: 0.5rem 0;
+}
+
+.breadcrumb {
+    margin-bottom: 0;
+
+    &-item {
+        &.active {
+            margin-top: 1px;
+        }
+    }
+}

@@ -1,0 +1,39 @@
+h2,
+h3 {
+    &:target {
+        display: inline-block;
+        @include focus();
+        scroll-margin-top: 100px;
+    }
+}
+
+blockquote {
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 0.5rem 2rem;
+    position: relative;
+    display: inline-block;
+
+    &::before {
+        @extend .fa;
+        content: '\f10d';
+        font-size: inherit;
+        font-weight: 700 !important;
+        color: $primary;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    &::after {
+        @extend .fa;
+        content: '\f10d';
+        font-size: inherit;
+        font-weight: 700 !important;
+        color: $primary;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        transform: rotate(180deg);
+    }
+}

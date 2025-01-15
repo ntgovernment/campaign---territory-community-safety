@@ -1,0 +1,94 @@
+.btn {
+    &:focus {
+        @include focus();
+    }
+
+    &-secondary {
+        &:hover,
+        &:focus {
+            background-color: tint-color($secondary, $btn-hover-bg-tint-amount);
+            border-color: tint-color($secondary, $btn-hover-bg-tint-amount);
+        }
+    }
+
+    &-external {
+        position: relative;
+        padding-right: calc($btn-padding-x + 18px + 1rem);
+        text-align: left;
+        
+        &:after {
+            @extend .fa;
+            content: '\e09f';
+            font-size: 1.5rem;
+            position: absolute;
+            top: 50%;
+            right: calc($btn-padding-x - 18px);
+            transform: translateY(-50%);
+            border-left: 1px solid $white;
+            padding-left: 1rem;
+        }
+
+        &.btn-sm {
+            padding-right: calc($btn-padding-x-sm + 12px + 0.5rem);
+
+            &:after {
+                font-size: 1rem;
+                right: calc($btn-padding-x-sm - 12px);
+                padding-left: 0.5rem;
+            }
+        }
+    }
+
+    &-arrow-right {
+        @include btn-icon("\f061");
+    }
+
+    &-accordion {
+        padding: $accordion-padding-y $accordion-body-padding-x;
+        border: $accordion-border-width solid $accordion-border-color;
+        color: $accordion-color;
+        @extend .accordion-header;
+        font-weight: 700;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        transition: $btn-transition;
+
+        @include media-breakpoint-down(lg) {
+            padding: 1.5rem;
+        }
+
+        &:hover,
+        &:focus {
+            background-color: $accordion-button-active-bg;
+        }
+    }
+}
+
+@each $color, $value in $theme-colors {
+    .btn-outline-#{$color}-bg {
+        @include button-outline-variant($value);
+        $color-contrast: color-contrast($value);
+        background-color: $value;
+        color: $color-contrast;
+        border-color: $color-contrast;
+
+        &:hover,
+        &:focus {
+            border-color: $color-contrast;
+
+            @if $color =="light" {
+                background-color: shade-color($value, $btn-hover-bg-tint-amount);
+            } @else if $color =="dark" or $color =="secondary" {
+                background-color: tint-color($value, $btn-hover-bg-tint-amount);
+            } @else {
+                @if $color-contrast == $color-contrast-light {
+                    background-color: shade-color($value, $btn-hover-bg-tint-amount);
+                } @else {
+                    background-color: tint-color($value, $btn-hover-bg-tint-amount);
+                }
+            }
+        }
+    }
+}

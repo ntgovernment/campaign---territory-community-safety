@@ -1,0 +1,107 @@
+.ntg-banner {
+    $this: &;
+
+    .ratio {
+        &::before {
+            padding-top: 174px;
+        }
+    }
+
+    img {
+        display: block;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    &__overlay {
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to bottom, transparent 47%, rgba($black, 0.78) 100%);
+        }
+    }
+
+    .container,
+    &__text {
+        height: 100%;
+    }
+
+    &__text {
+        color: $white;
+        text-shadow: $text-shadow;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+
+        @include media-breakpoint-down(md) {
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+        }
+
+        h1 {
+            margin-bottom: 0;
+        }
+    }
+
+    &--alt {
+        background-color: $primary;
+        overflow: clip;
+
+        .ratio {
+            &::before {
+                padding-top: 262px;
+            }
+        }
+
+        #{$this}__background {
+            img {
+                position: absolute;
+                left: 50%;
+                right: 0;
+                display: block;
+                width: 50vw;
+                height: 100%;
+            }
+
+            &:after {
+                content: '';
+                background-image: url('../assets/css-images/yellow.svg');
+                background-size: 100% 100%;
+                background-position: center;
+                background-repeat: no-repeat;
+                position: absolute;
+                width: 323px;
+                top: -10px;
+                bottom: 0;
+                left: calc(50% - 10px);
+                z-index: 1;
+            }
+        }
+
+        #{$this}__text {
+            color: $primary-text;
+            text-shadow: none;
+            position: relative;
+            z-index: 1;
+            width: 45%;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 0;
+
+            @include media-breakpoint-down(lg) {
+                width: 40%;
+            }
+        }
+
+        #{$this}__metadata {
+            font-size: $font-size-sm;
+        }
+    }
+}

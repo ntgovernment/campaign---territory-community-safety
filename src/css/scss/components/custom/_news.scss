@@ -1,0 +1,30 @@
+#content .ntg-news-listing form {
+    margin-bottom: 2rem;
+
+    .sq-form-question,
+    .sq-form-control {
+        margin-top: 1rem;
+    }
+
+    .sq-form-control:has(input[type="submit"]) {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .row {
+        align-items: flex-end;
+    }
+
+    .col-auto {
+        @include media-breakpoint-up(lg) {
+            flex: unset;
+        }
+    }
+}
+
+.ntg-news-listing {
+    nav[aria-label="Pagination"] {
+        margin-top: 2rem;
+    }
+}

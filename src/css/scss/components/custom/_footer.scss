@@ -1,0 +1,134 @@
+.ntg-footer {
+    color: $white;
+    background-color: $secondary;
+    padding: 1.5rem 0;
+    overflow: clip;
+
+    @include media-breakpoint-up(lg) {
+        padding: 2.5rem 0;
+    }
+
+    .container {
+        position: relative;
+    }
+
+    h2 {
+        color: inherit;
+        @include font-size($h4-font-size);
+        margin-bottom: 0;
+
+        @include media-breakpoint-down(lg) {
+            @include font-size($h5-font-size);
+        }
+    }
+
+    p {
+        margin: 0;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    li {
+        font-size: $font-size-sm;
+        line-height: 30px;
+    }
+
+    a {
+        color: inherit;
+        text-underline-offset: 3px;
+
+        &:hover,
+        &:focus {
+            text-decoration: none;
+        }
+    }
+
+    &__logo {
+        min-width: 60px;
+        max-width: 136px;
+        width: 100%;
+        display: block;
+        margin-bottom: 1.5rem;
+        
+        @include media-breakpoint-down(lg) {
+            max-width: 100px;
+        }
+
+        @include media-breakpoint-up(xxl) {
+            margin-bottom: 2rem;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &__message {
+        color: $secondary-text;
+        font-size: $font-size-sm;
+    }
+
+    &__copyright {
+        font-size: $font-size-sm;
+        line-height: 20px;
+        position: relative;
+    }
+
+    &__contacts {
+        @include media-breakpoint-down(lg) {
+            margin-bottom: 1.5rem;
+        }
+
+        ul {
+            @include media-breakpoint-up(lg) {
+                margin-bottom: 2rem;
+            }
+        }
+
+        a {
+            font-weight: 300;
+        }
+    }
+
+    &__links {
+        position: relative;
+
+        @include media-breakpoint-down(lg) {
+            margin-top: 1.5rem;
+        }
+
+        ul {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        &::before {
+            content: '';
+            background-color: tint-color($secondary, 15%);
+            display: block;
+            position: absolute;
+            top: -1.5rem;
+            bottom: -9999px;
+            left: -9999px;
+            right: -9999px;
+            
+            @include media-breakpoint-up(lg) {
+                top: -2.5rem;
+                bottom: -9999px;
+                left: 0;
+                right: -9999px;
+            }
+        }
+    }
+}
